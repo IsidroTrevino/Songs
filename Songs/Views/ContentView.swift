@@ -17,23 +17,26 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            GenreHome()
-                .tabItem {
-                    Label("Featured", systemImage: "star")
-                }
-                .tag(Tab.featured)
+            NavigationStack {
+                GenreHome()
+            }
+            .tabItem {
+                Label("Featured", systemImage: "star")
+            }
+            .tag(Tab.featured)
             
-            
-            SongList()
-                .tabItem{
-                    Label("List", systemImage: "list.bullet")
-                }
-                .tag(Tab.list)
+            NavigationStack {
+                SongList()
+            }
+            .tabItem {
+                Label("List", systemImage: "list.bullet")
+            }
+            .tag(Tab.list)
         }
     }
 }
 
 #Preview {
     ContentView()
-        .environment(Modeldata())
+        .modelContainer(SampleData.shared.modelContainer)
 }

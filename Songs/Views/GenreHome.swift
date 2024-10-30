@@ -6,31 +6,68 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct GenreHome: View {
-    @Environment(Modeldata.self) var modelData
+    @Query private var songs: [Song]
+    
+    var features: [Song] {
+        let featuredSongs = songs.filter { $0.isFeatured }
+        print("Featured Songs: \(featuredSongs.map { $0.name })")
+        return featuredSongs
+    }
+
+    
+    var categories: [String: [Song]] {
+        Dictionary(grouping: songs) { song in
+            song.genre
+        }
+    }
+
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
-                Image(modelData.features[6].AlbumImageName)
-                    .resizable()
+                if let featuredSong = features.first {
+                    Group {
+                        if let albumImage = loadImage(named: featuredSong.albumImageName) {
+                            Image(uiImage: albumImage)
+                                .resizable()
+                        } else if let preloadedImage = UIImage(named: featuredSong.albumImageName) {
+                            Image(uiImage: preloadedImage)
+                                .resizable()
+                        } else {
+                            Image(systemName: "questionmark.app")
+                                .resizable()
+                                .foregroundColor(.gray)
+                        }
+                    }
                     .scaledToFill()
                     .frame(height: 200)
                     .clipped()
                     .listRowInsets(EdgeInsets())
-                ForEach(modelData.categories.keys.sorted(), id: \.self){
-                    key in GenreRow(genreName: key, items: modelData.categories[key]!)
+                }
+                
+                ForEach(categories.keys.sorted(), id: \.self) { key in
+                    if let genreSongs = categories[key] {
+                        GenreRow(genreName: key, items: genreSongs)
+                    }
                 }
                 .listRowInsets(EdgeInsets())
             }
-                .navigationTitle("Featured")
-        } detail: {
-            Text("Select a song")
+            .navigationTitle("Featured")
         }
+    }
+    
+    private func loadImage(named name: String) -> UIImage? {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(name)
+        if FileManager.default.fileExists(atPath: documentsURL.path) {
+            return UIImage(contentsOfFile: documentsURL.path)
+        }
+        return nil
     }
 }
 
 #Preview {
     GenreHome()
-        .environment(Modeldata())
+        .modelContainer(SampleData.shared.modelContainer)
 }

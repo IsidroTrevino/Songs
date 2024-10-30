@@ -7,14 +7,11 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct GenreRow: View {
-    
     var genreName: String
     var items: [Song]
     
-    let gridItems = [GridItem(.fixed(185))] 
+    let gridItems = [GridItem(.fixed(185))]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -42,8 +39,9 @@ struct GenreRow: View {
 }
 
 #Preview {
-    let songs = Modeldata().songs
-    return GenreRow(
-        genreName: songs[0].genre.rawValue, items: Array(songs.prefix(5))
+    GenreRow(
+        genreName: SampleData.shared.song.genre,
+        items: Array(Song.sampleData.prefix(5))
     )
+    .modelContainer(SampleData.shared.modelContainer)
 }

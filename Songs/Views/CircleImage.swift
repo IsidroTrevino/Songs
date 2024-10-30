@@ -8,20 +8,35 @@
 import SwiftUI
 
 struct CircleImage: View {
-    var image: String
+    var image: Image?
+    var uiImage: UIImage?
+    
     var body: some View {
-        Image(image)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 200)
-            .clipShape(Circle())
-            .overlay{
-                Circle().stroke(.black, lineWidth: 5)
+        Group {
+            if let image = image {
+                image
+                    .resizable()
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
+            } else if let uiImage = uiImage {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
+            } else {
+                Image(systemName: "person.crop.circle.fill")
+                    .resizable()
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
             }
-            .shadow(radius: 7)
+        }
     }
 }
 
+
 #Preview {
-    CircleImage(image: "PabloHoney")
+    CircleImage(image: nil, uiImage: UIImage(named: "PabloHoney"))
 }

@@ -6,23 +6,114 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E6FAD5AD2CB6521100611864 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FAD5AC2CB6521100611864 /* WidgetKit.framework */; };
+		E6FAD5AF2CB6521100611864 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FAD5AE2CB6521100611864 /* SwiftUI.framework */; };
+		E6FAD5BA2CB6521500611864 /* SongsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E6FAD5AA2CB6521100611864 /* SongsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E65E02C82CD217FF001248F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6985B062CA30A8C000F3591 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6985B0D2CA30A8C000F3591;
+			remoteInfo = Songs;
+		};
+		E6FAD5B82CB6521500611864 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6985B062CA30A8C000F3591 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6FAD5A92CB6521100611864;
+			remoteInfo = SongsWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E6FAD5BB2CB6521500611864 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E6FAD5BA2CB6521500611864 /* SongsWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E65E02C42CD217FF001248F9 /* SongsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SongsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6985B0E2CA30A8C000F3591 /* Songs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Songs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6FAD5AA2CB6521100611864 /* SongsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SongsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6FAD5AC2CB6521100611864 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E6FAD5AE2CB6521100611864 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E6FAD5BE2CB6521500611864 /* Exceptions for "SongsWidget" folder in "SongsWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E6FAD5A92CB6521100611864 /* SongsWidgetExtension */;
+		};
+		E6FAD5C52CB6533D00611864 /* Exceptions for "Songs" folder in "SongsWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/SampleData.swift,
+				Models/Song.swift,
+			);
+			target = E6FAD5A92CB6521100611864 /* SongsWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		E65E02C52CD217FF001248F9 /* SongsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SongsTests;
+			sourceTree = "<group>";
+		};
 		E6985B102CA30A8C000F3591 /* Songs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E6FAD5C52CB6533D00611864 /* Exceptions for "Songs" folder in "SongsWidgetExtension" target */,
+			);
 			path = Songs;
+			sourceTree = "<group>";
+		};
+		E6FAD5B02CB6521100611864 /* SongsWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E6FAD5BE2CB6521500611864 /* Exceptions for "SongsWidget" folder in "SongsWidgetExtension" target */,
+			);
+			path = SongsWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E65E02C12CD217FF001248F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6985B0B2CA30A8C000F3591 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FAD5A72CB6521100611864 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6FAD5AF2CB6521100611864 /* SwiftUI.framework in Frameworks */,
+				E6FAD5AD2CB6521100611864 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				E6985B102CA30A8C000F3591 /* Songs */,
+				E6FAD5B02CB6521100611864 /* SongsWidget */,
+				E65E02C52CD217FF001248F9 /* SongsTests */,
+				E6FAD5AB2CB6521100611864 /* Frameworks */,
 				E6985B0F2CA30A8C000F3591 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,13 +135,47 @@
 			isa = PBXGroup;
 			children = (
 				E6985B0E2CA30A8C000F3591 /* Songs.app */,
+				E6FAD5AA2CB6521100611864 /* SongsWidgetExtension.appex */,
+				E65E02C42CD217FF001248F9 /* SongsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E6FAD5AB2CB6521100611864 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6FAD5AC2CB6521100611864 /* WidgetKit.framework */,
+				E6FAD5AE2CB6521100611864 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E65E02C32CD217FF001248F9 /* SongsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E65E02CA2CD217FF001248F9 /* Build configuration list for PBXNativeTarget "SongsTests" */;
+			buildPhases = (
+				E65E02C02CD217FF001248F9 /* Sources */,
+				E65E02C12CD217FF001248F9 /* Frameworks */,
+				E65E02C22CD217FF001248F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E65E02C92CD217FF001248F9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E65E02C52CD217FF001248F9 /* SongsTests */,
+			);
+			name = SongsTests;
+			packageProductDependencies = (
+			);
+			productName = SongsTests;
+			productReference = E65E02C42CD217FF001248F9 /* SongsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E6985B0D2CA30A8C000F3591 /* Songs */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6985B1C2CA30A8D000F3591 /* Build configuration list for PBXNativeTarget "Songs" */;
@@ -55,10 +183,12 @@
 				E6985B0A2CA30A8C000F3591 /* Sources */,
 				E6985B0B2CA30A8C000F3591 /* Frameworks */,
 				E6985B0C2CA30A8C000F3591 /* Resources */,
+				E6FAD5BB2CB6521500611864 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E6FAD5B92CB6521500611864 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E6985B102CA30A8C000F3591 /* Songs */,
@@ -70,6 +200,28 @@
 			productReference = E6985B0E2CA30A8C000F3591 /* Songs.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E6FAD5A92CB6521100611864 /* SongsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6FAD5BF2CB6521500611864 /* Build configuration list for PBXNativeTarget "SongsWidgetExtension" */;
+			buildPhases = (
+				E6FAD5A62CB6521100611864 /* Sources */,
+				E6FAD5A72CB6521100611864 /* Frameworks */,
+				E6FAD5A82CB6521100611864 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E6FAD5B02CB6521100611864 /* SongsWidget */,
+			);
+			name = SongsWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = SongsWidgetExtension;
+			productReference = E6FAD5AA2CB6521100611864 /* SongsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -80,7 +232,14 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					E65E02C32CD217FF001248F9 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = E6985B0D2CA30A8C000F3591;
+					};
 					E6985B0D2CA30A8C000F3591 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					E6FAD5A92CB6521100611864 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -100,12 +259,28 @@
 			projectRoot = "";
 			targets = (
 				E6985B0D2CA30A8C000F3591 /* Songs */,
+				E6FAD5A92CB6521100611864 /* SongsWidgetExtension */,
+				E65E02C32CD217FF001248F9 /* SongsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E65E02C22CD217FF001248F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6985B0C2CA30A8C000F3591 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FAD5A82CB6521100611864 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +290,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E65E02C02CD217FF001248F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6985B0A2CA30A8C000F3591 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6FAD5A62CB6521100611864 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +313,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E65E02C92CD217FF001248F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6985B0D2CA30A8C000F3591 /* Songs */;
+			targetProxy = E65E02C82CD217FF001248F9 /* PBXContainerItemProxy */;
+		};
+		E6FAD5B92CB6521500611864 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6FAD5A92CB6521100611864 /* SongsWidgetExtension */;
+			targetProxy = E6FAD5B82CB6521500611864 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E65E02CB2CD217FF001248F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AWB66Q34B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tec.mx.isidro.SongsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songs.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Songs";
+			};
+			name = Debug;
+		};
+		E65E02CC2CD217FF001248F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AWB66Q34B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tec.mx.isidro.SongsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songs.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Songs";
+			};
+			name = Release;
+		};
 		E6985B1A2CA30A8D000F3591 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -302,9 +540,72 @@
 			};
 			name = Release;
 		};
+		E6FAD5BC2CB6521500611864 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AWB66Q34B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SongsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SongsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tec.mx.isidro.Songs.SongsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6FAD5BD2CB6521500611864 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AWB66Q34B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SongsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SongsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tec.mx.isidro.Songs.SongsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E65E02CA2CD217FF001248F9 /* Build configuration list for PBXNativeTarget "SongsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E65E02CB2CD217FF001248F9 /* Debug */,
+				E65E02CC2CD217FF001248F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E6985B092CA30A8C000F3591 /* Build configuration list for PBXProject "Songs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -319,6 +620,15 @@
 			buildConfigurations = (
 				E6985B1D2CA30A8D000F3591 /* Debug */,
 				E6985B1E2CA30A8D000F3591 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6FAD5BF2CB6521500611864 /* Build configuration list for PBXNativeTarget "SongsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6FAD5BC2CB6521500611864 /* Debug */,
+				E6FAD5BD2CB6521500611864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

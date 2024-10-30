@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SongRow: View {
-    var song : Song
+    var song: Song
     
     var body: some View {
         HStack {
@@ -29,7 +29,6 @@ struct SongRow: View {
                     
                     Text(song.songLength)
                         .frame(width: 50, alignment: .trailing)
-                    
                 }
                 .font(.subheadline)
                 
@@ -37,15 +36,17 @@ struct SongRow: View {
                     .font(.callout)
                     .foregroundStyle(.secondary)
             }
-            if(song.isFavorite) {
+            
+            if song.isFavorite {
                 Image(systemName: "heart.fill")
                     .foregroundStyle(.red)
             }
         }
+        .padding(.vertical, 4)
     }
 }
 
 #Preview {
-    let songs = Modeldata().songs
-    SongRow(song: songs[0])
+    SongRow(song: SampleData.shared.song)
+        .modelContainer(SampleData.shared.modelContainer)
 }
